@@ -87,7 +87,5 @@ namespace Torch.Core
 
             return result;
         }
-
-        
     }
 }

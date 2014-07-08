@@ -16,7 +16,7 @@ namespace Torch.Cli
 
         public IArgumentHandler InitialiseArgumentHandlers()
         {
-            return new ArgumentHandler(this);
+            return new ArgumentHandler(new SearchCommand(this, new WordDictionaryIO()));
         }
     }
 

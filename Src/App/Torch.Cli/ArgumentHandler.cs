@@ -6,11 +6,11 @@ namespace Torch.Cli
 {
     public class ArgumentHandler : IArgumentHandler
     {
-        private readonly IApplicationFactory _applicationFactory;
+        private readonly ICommand<CommandLineArguments, string[]> _searchCommand;
 
-        public ArgumentHandler(IApplicationFactory applicationFactory)
+        public ArgumentHandler(ICommand<CommandLineArguments, string[]> searchCommand)
         {
-            _applicationFactory = applicationFactory;
+            _searchCommand = searchCommand;
         }
 
         public bool Complete { get; private set; }
@@ -70,9 +70,9 @@ namespace Torch.Cli
                 {
                     if (args.IsSearchCommand)
                     {
-                        var dictionary = _applicationFactory.InitialiseWordDictionaryFor(args.CustomDictionaryFileSpecified ? args.CustomFileLocation : args.DefaultDictionaryFile);
+                        _searchCommand.Context = args;
 
-                        var results = dictionary.GetMatches(new SingleLetterUpdateMatching(), args.StartWord, args.EndWord);
+                        var results = _searchCommand.Execute();
 
                         Output = new CommandLineOutput
                         {

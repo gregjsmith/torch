@@ -14,5 +14,10 @@ namespace Torch.Core
 
             return contents;
         }
+
+        public void Save(string[] content, string file)
+        {
+            File.AppendAllLines(file, content);
+        }
     }
 }
