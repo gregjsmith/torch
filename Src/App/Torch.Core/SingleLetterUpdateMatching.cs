@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Torch.Core
@@ -12,8 +13,13 @@ namespace Torch.Core
         /// <param name="set">This is the set to be tested</param>
         /// <param name="start">Where to start the search</param>
         /// <param name="end">Where to end the search</param>
-        public string[] GetMatches(string[] set, string start, string end)
+        /// <param name="caseSensitiveMatching">Whether the matching search should be case sensitive, default is false</param>
+        public string[] GetMatches(string[] set, string start, string end, bool caseSensitiveMatching = false)
         {
+            var comparisonType = caseSensitiveMatching
+                ? StringComparison.CurrentCulture
+                : StringComparison.CurrentCultureIgnoreCase;
+
             var previousWord = start;
 
             var output = new List<string>();
@@ -48,9 +54,9 @@ namespace Torch.Core
 
                     var newWord = new string(chars);
 
-                    if (newWord == currentWord)
+                    if (newWord.Equals(currentWord, comparisonType))
                     {
-                        output.Add(newWord);
+                        output.Add(newWord.ToLower());
                         previousWord = newWord;
                         break;
                     }

@@ -131,11 +131,33 @@ namespace Torch.Tests
 
             var matcher = new SingleLetterUpdateMatching();
 
-            var matches = matcher.GetMatches(set, @"I'd", @"IR");
+            var matches = matcher.GetMatches(set, @"I'd", @"IR", true);
 
             matches.ShouldBeEquivalentTo(new[]
             {
-                "I'm",
+                "i'm",
+            });
+        }
+
+        [Fact]
+        public void matching_is_not_case_sensitive_by_default()
+        {
+            var list = new[]
+            {
+                "SPIN",
+                "spoN",
+                "sPun",
+                "Sput"
+            };
+
+            var matcher = new SingleLetterUpdateMatching();
+
+            var matches = matcher.GetMatches(list, "SPIN", "Sput");
+
+            matches.ShouldBeEquivalentTo(new[]
+            {
+                "spon",
+                "spun",
             });
         }
 
