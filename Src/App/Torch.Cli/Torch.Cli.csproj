@@ -36,21 +36,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationFactory.cs" />
-    <Compile Include="ArgumentHandler.cs" />
     <Compile Include="CommandLineApplication.cs" />
-    <Compile Include="CommandLineArguments.cs" />
-    <Compile Include="CommandLineOutput.cs" />
-    <Compile Include="HelpOutput.cs" />
-    <Compile Include="IApplicationFactory.cs" />
-    <Compile Include="IArgumentHandler.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="InvalidArgumentsOutput.cs" />
-    <Compile Include="Messages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchCommand.cs" />
-    <Compile Include="SearchCommandResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Dictionary.txt">

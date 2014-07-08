@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Torch.Core.Cli.Output;
 
-namespace Torch.Cli
+namespace Torch.Core.Cli
 {
     public interface IArgumentHandler
     {

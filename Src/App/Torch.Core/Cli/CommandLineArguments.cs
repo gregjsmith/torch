@@ -1,7 +1,6 @@
 using System;
-using Torch.Core;
 
-namespace Torch.Cli
+namespace Torch.Core.Cli
 {
     /// <summary>
     /// Controls access to the list of arguments passed at the command line

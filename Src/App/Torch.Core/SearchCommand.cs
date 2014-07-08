@@ -1,6 +1,6 @@
-using Torch.Core;
+using Torch.Core.Cli;
 
-namespace Torch.Cli
+namespace Torch.Core
 {
     /// <summary>
     /// Encapsulates the execution of a dictionary search operation

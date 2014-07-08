@@ -1,6 +1,6 @@
 using System;
 
-namespace Torch.Cli
+namespace Torch.Core.Cli.Output
 {
     /// <summary>
     /// A container for the output of the command line application

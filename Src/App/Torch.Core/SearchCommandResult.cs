@@ -1,4 +1,4 @@
-namespace Torch.Cli
+namespace Torch.Core
 {
     public class SearchCommandResult
     {

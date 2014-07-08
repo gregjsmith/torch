@@ -1,4 +1,6 @@
 ﻿using System;
+using Torch.Core;
+using Torch.Core.Cli;
 
 namespace Torch.Cli
 {

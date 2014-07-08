@@ -1,4 +1,4 @@
-namespace Torch.Cli
+namespace Torch.Core
 {
     /// <summary>
     /// A generic command interface - implementations control the input and output values

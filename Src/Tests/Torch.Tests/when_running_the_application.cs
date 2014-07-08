@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using Moq;
 using Torch.Cli;
+using Torch.Core;
+using Torch.Core.Cli;
 using Xunit;
 
 namespace Torch.Tests

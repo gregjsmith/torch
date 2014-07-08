@@ -1,6 +1,4 @@
-﻿using Torch.Core;
-
-namespace Torch.Cli
+﻿namespace Torch.Core.Cli
 {
     public class ApplicationFactory : IApplicationFactory
     {

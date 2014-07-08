@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Torch.Core;
+using Torch.Core.Cli.Output;
 
-namespace Torch.Cli
+namespace Torch.Core.Cli
 {
     public class ArgumentHandler : IArgumentHandler
     {

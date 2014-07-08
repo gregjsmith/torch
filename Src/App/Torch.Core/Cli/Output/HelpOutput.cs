@@ -1,6 +1,6 @@
 using System;
 
-namespace Torch.Cli
+namespace Torch.Core.Cli.Output
 {
     public class HelpOutput : CommandLineOutput
     {

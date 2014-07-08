@@ -34,9 +34,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cli\ApplicationFactory.cs" />
+    <Compile Include="Cli\ArgumentHandler.cs" />
     <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="Cli\CommandLineArguments.cs" />
+    <Compile Include="Cli\IApplicationFactory.cs" />
+    <Compile Include="Cli\IArgumentHandler.cs" />
+    <Compile Include="Cli\Messages.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="IWordMatchingStrategy.cs" />
     <Compile Include="IWordDictionary.cs" />
+    <Compile Include="Cli\Output\CommandLineOutput.cs" />
+    <Compile Include="Cli\Output\HelpOutput.cs" />
+    <Compile Include="Cli\Output\InvalidArgumentsOutput.cs" />
+    <Compile Include="SearchCommand.cs" />
+    <Compile Include="SearchCommandResult.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="WordDictionary.cs" />
     <Compile Include="WordDictionaryIO.cs" />
