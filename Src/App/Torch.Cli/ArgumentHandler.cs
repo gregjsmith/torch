@@ -6,9 +6,9 @@ namespace Torch.Cli
 {
     public class ArgumentHandler : IArgumentHandler
     {
-        private readonly ICommand<CommandLineArguments, string[]> _searchCommand;
+        private readonly ICommand<CommandLineArguments, SearchCommandResult> _searchCommand;
 
-        public ArgumentHandler(ICommand<CommandLineArguments, string[]> searchCommand)
+        public ArgumentHandler(ICommand<CommandLineArguments, SearchCommandResult> searchCommand)
         {
             _searchCommand = searchCommand;
         }
@@ -76,9 +76,9 @@ namespace Torch.Cli
 
                         Output = new CommandLineOutput
                         {
-                            Results = results,
+                            Results = results.Results,
                             ConsoleColor = ConsoleColor.Green,
-                            Message = results.Length > 0 ? "Results listed below: " : "No results for that search."
+                            Message = results.Outcome
                         };
 
                         Complete = true;

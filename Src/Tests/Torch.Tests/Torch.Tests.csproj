@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="when_parsing_command_line_arguments.cs" />
+    <Compile Include="when_performing_a_search_operation.cs" />
     <Compile Include="when_running_the_application.cs" />
     <Compile Include="given_a_startword_and_an_endword.cs" />
     <Compile Include="given_a_working_set.cs" />

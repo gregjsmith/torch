@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using Moq;
 using Torch.Cli;
-using Torch.Core;
 using Xunit;
 
 namespace Torch.Tests
@@ -27,21 +26,7 @@ namespace Torch.Tests
         }
 
 
-        [Fact]
-        public void it_will_invoke_a_matching_request_if_a_seach_is_directed_and_a_start_and_end_word_are_provided()
-        {
-            var dictionary = new Mock<IWordDictionary>();
-
-            var search = new SearchCommand(_factory.Object, new WordDictionaryIO());
-
-            _factory.Setup(m => m.InitialiseWordDictionaryFor(It.IsAny<string>())).Returns(dictionary.Object);
-
-            search.Context = new CommandLineArguments("search this that".Split(' '));
-
-            search.Execute();
-
-            dictionary.Verify(m => m.GetMatches(It.IsAny<IWordMatchingStrategy>(), "this", "that"), Times.Once);
-        }
+        
 
         [Fact]
         public void it_will_print_an_invalid_arguments_message_if_a_search_is_directed_but_start_word_isnt_provided()
@@ -89,10 +74,10 @@ namespace Torch.Tests
             output.Message.Should().Contain("End word two does not contain exactly four letters");
         }
 
-        private class FakeSearchCommand : ICommand<CommandLineArguments, string[]>
+        private class FakeSearchCommand : ICommand<CommandLineArguments, SearchCommandResult>
         {
             public CommandLineArguments Context { set; private get; }
-            public string[] Execute()
+            public SearchCommandResult Execute()
             {
                 throw new System.NotImplementedException();
             }

@@ -17,6 +17,10 @@ namespace Torch.Core
 
         public void Save(string[] content, string file)
         {
+            if (File.Exists(file))
+            {
+                File.Delete(file);
+            }
             File.AppendAllLines(file, content);
         }
     }
