@@ -56,7 +56,7 @@ namespace Torch.Core
 
                     if (newWord.Equals(currentWord, comparisonType))
                     {
-                        output.Add(newWord.ToLower());
+                        output.Add(currentWord); 
                         previousWord = newWord;
                         break;
                     }

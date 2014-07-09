@@ -135,7 +135,7 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
-                "i'm",
+                "I'm",
             });
         }
 
@@ -156,8 +156,8 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
-                "spon",
-                "spun",
+                "spoN",
+                "sPun",
             });
         }
 
