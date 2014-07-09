@@ -24,6 +24,8 @@ namespace Torch.Core
 
             var output = new List<string>();
 
+            output.Add(start);
+
             foreach (var currentWord in set)
             {
                 // Three short-circuit clauses here:
@@ -63,6 +65,7 @@ namespace Torch.Core
                 }
             }
 
+            output.Add(end);
             return output.ToArray();
         }
     }

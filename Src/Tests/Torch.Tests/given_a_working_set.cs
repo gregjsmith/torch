@@ -27,10 +27,12 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
+                "where",
                 "there",
                 "ghere",
                 "ghare",
                 "glare",
+                "flare"
             });
         }
 
@@ -58,8 +60,10 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
+                "where",
                 "ghere",
                 "ghare",
+                "hello"
             });
         }
 
@@ -86,8 +90,10 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
+                @"\4th",
                 @"\5th",
                 @"\6th",
+                @"\7th"
             });
         }
 
@@ -135,7 +141,9 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
+                @"I'd",
                 "I'm",
+                @"IR"
             });
         }
 
@@ -156,8 +164,10 @@ namespace Torch.Tests
 
             matches.ShouldBeEquivalentTo(new[]
             {
+                "SPIN",
                 "spoN",
                 "sPun",
+                "Sput"
             });
         }
 

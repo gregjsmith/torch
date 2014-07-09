@@ -15,19 +15,20 @@ namespace Torch.Core
         }
 
         /// <summary>
-        /// 
+        /// Invoke the provided <see cref="IWordMatchingStrategy"/> to provide the appropriate search results
         /// </summary>
-        /// <param name="strategy"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <returns></returns>
+        /// <param name="strategy">The matching strategy in place.</param>
+        /// <param name="start">The start point of the search</param>
+        /// <param name="end">The end point of the search</param>
+        /// <returns>The results of the word search</returns>
         public string[] GetMatches(IWordMatchingStrategy strategy, string start, string end)
         {
             return strategy.GetMatches(GetWorkingSet(start, end), start, end);
         }
 
         /// <summary>
-        /// Get all the words that appear between the provided start and end points within the dictionary
+        /// Get all the words that appear between the provided start and end points within the dictionary. 
+        /// The lookup against the dictionary is not case sensitive.
         /// </summary>
         /// <param name="start">This word is the start index of the search</param>
         /// <param name="end">This word is the end index of the search</param>
@@ -48,14 +49,14 @@ namespace Torch.Core
         /// </exception>
         public string[] GetWorkingSet(string start, string end)
         {
-            var first = Array.IndexOf(_fullContents, start);
+            var first = Array.FindIndex(_fullContents, t => t.IndexOf(start, StringComparison.InvariantCultureIgnoreCase) >= 0);
 
             if (first == -1)
             {
                 throw new ArgumentException("Start word " + start + " was not found in dictionary");
             }
 
-            var last = Array.IndexOf(_fullContents, end);
+            var last = Array.FindIndex(_fullContents, t => t.IndexOf(end, StringComparison.InvariantCultureIgnoreCase) >= 0);
 
             if (last == -1)
             {

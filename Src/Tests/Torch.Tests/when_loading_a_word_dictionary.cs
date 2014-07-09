@@ -6,11 +6,11 @@ using Xunit;
 
 namespace Torch.Tests
 {
-    public class when_getting_a_word_dictionary : IDisposable
+    public class when_loading_a_word_dictionary : IDisposable
     {
         private readonly string[] _words = { "hello", "and", "goodbye" };
 
-        public when_getting_a_word_dictionary()
+        public when_loading_a_word_dictionary()
         {
             File.AppendAllLines("words.txt", _words);
         }

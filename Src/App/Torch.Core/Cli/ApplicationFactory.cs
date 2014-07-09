@@ -12,6 +12,9 @@
             return new WordDictionary(filePath, new WordDictionaryIO());
         }
 
+        /// <summary>
+        /// Initialises a concrete implementation of an <see cref="IArgumentHandler"/>, including all dependencies.
+        /// </summary>
         public IArgumentHandler InitialiseArgumentHandlers()
         {
             return new ArgumentHandler(new SearchCommand(this, new WordDictionaryIO()));

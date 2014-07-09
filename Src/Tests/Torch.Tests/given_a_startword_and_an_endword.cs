@@ -83,6 +83,22 @@ namespace Torch.Tests
             ex.Message.Should().Contain("End word clyde was not found in dictionary");
         }
 
+        [Fact]
+        public void the_lookup_of_the_startword_and_endword_is_not_case_sensitive()
+        {
+            var words = new string[]
+            {
+                "soMETHing", "In", "THE", "WaY", "shE", "MOVEs"
+            };
+
+            _fileLoader.Setup(m => m.GetWordListFrom("")).Returns(words);
+
+            var dictionary = new WordDictionary("", _fileLoader.Object);
+
+            var set = dictionary.GetWorkingSet("something", "she");
+
+            set.Should().Contain("soMETHing", "In", "THE", "WaY", "shE");
+        }
       
     }
 }

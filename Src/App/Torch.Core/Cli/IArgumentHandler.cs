@@ -7,7 +7,7 @@ namespace Torch.Core.Cli
     public interface IArgumentHandler
     {
         /// <summary>
-        /// Whether the arguments have been successfully handled yet or not.
+        /// Whether any of the <see cref="Handlers"/> have been able to successfully handle the args.
         /// </summary>
         bool Complete { get; }
 
